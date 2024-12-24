@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGA CORP | PSP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <button class="btnlogout" onclick="window.location.href='/logout'">Log Out</button>
+        <img src="{{ url_for('static', filename='images/psplogo.png') }}" alt="PSP Logo" class="logo">
+
+        <h1>LGA CORP | PSP</h1>
+
+        <button class="btn" id="dayBtn">Day Mode</button>
+        <button class="btn" id="nightBtn">Night Mode</button>
+        <button class="btn" onclick="window.location.href='/reports'">Reports</button>
+
+        <h3>Set Day/Night Profile Times</h3>
+        <label for="day_time">Day Start Time:</label>
+        <input type="time" id="day_time" value="{{ day_profile_time[0] if day_profile_time else '06:00' }}">
+
+        <label for="night_time">Night Start Time:</label>
+        <input type="time" id="night_time" value="{{ night_profile_time[0] if night_profile_time else '18:00' }}">
+
+        <button class="btn" id="setTimeBtn">Set Time Profile</button>
+        <div id="timeProfileStatus" style="display: inline-block; margin-left: 10px;">Loading...</div>
+
+        <h3>Add New Camera</h3>
+        <label for="camera_ip">Camera IP:</label>
+        <input type="text" id="camera_ip">
+        <button class="btn" id="addCameraBtn">Add Camera</button>
+
+        <div class="status">
+            <h4>Status</h4>
+            <p>Day Mode: <span id="dayStatus">{{ day_mode_count }} cameras</span></p>
+            <p>Night Mode: <span id="nightStatus">{{ night_mode_count }} cameras</span></p>
+
+            <button class="btn" id="refreshBtn">Refresh Status</button>
+        </div>
+    </div>
+    <div style="position: fixed; bottom: 10px; right: 10px; font-size: 12px; color: gray;">
+        &copy; 2024 LGA Corporation. All rights reserved.
+    </div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
+

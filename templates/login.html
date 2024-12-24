@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+<body>
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="{{ url_for('static', filename='images/psplogo.png') }}" alt="PSP Logo" class="logo">
+
+        <!-- Login Form -->
+        <h2>Login</h2>
+        <form method="POST" action="/login">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button class="btn" type="submit">Login</button>
+        </form>
+
+        <!-- Error message -->
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+<div style="position: fixed; bottom: 10px; right: 10px; font-size: 12px; color: gray;">
+    &copy; 2024 LGA Corporation. All rights reserved.
+</div>
+
+</body>
+</html>

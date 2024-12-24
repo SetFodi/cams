@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reports.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <h1>Camera Reports</h1>
+
+        <!-- Stats Section -->
+        <div class="stats" id="cameraStats">
+            <!-- Stats will be dynamically updated here -->
+        </div>
+
+        <!-- Camera List -->
+        <div id="cameraList">
+            <!-- Camera list will be dynamically generated here -->
+        </div>
+
+        <!-- Back to Main Button -->
+        <button class="btn btn-back" onclick="window.location.href='/'">Back to Main</button>
+    </div>
+
+
+<div style="position: fixed; bottom: 10px; right: 10px; font-size: 12px; color: gray;">
+    &copy; 2024 LGA Corporation. All rights reserved.
+</div>
+
+<script src="{{ url_for('static', filename='js/reports.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+        /* Base styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #29293d;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+
+        h1 {
+            color: #00d4ff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Statistics section */
+        .stats {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #ffffff;
+            background: linear-gradient(90deg, #1e1e2f, #29293d);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .connected {
+            color: lightgreen;
+            font-weight: bold;
+        }
+
+        .not-connected {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Camera list */
+        .camera {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2e2e42;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .camera p {
+            margin: 0;
+            color: #ffffff;
+        }
+
+        /* Buttons */
+        .btn {
+            background: linear-gradient(90deg, #1e90ff, #00bfff);
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.3s ease, background 0.3s ease; /* Smooth hover animation */
+        }
+
+        .btn:hover {
+            background: linear-gradient(90deg, #00bfff, #1e90ff);
+            transform: scale(1.05); /* Slight hover scale effect */
+        }
+
+        /* Back to Main button */
+        .btn-back {
+            background: linear-gradient(90deg, #ff6961, #ff8561);
+        }
+
+        .btn-back:hover {
+            background: linear-gradient(90deg, #ff8561, #ff6961);
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .btn {
+                width: 100%; /* Make buttons full width for small screens */
+                margin-bottom: 10px;
+            }
+
+            .camera {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .camera p {
+                margin-bottom: 10px;
+            }
+        }
